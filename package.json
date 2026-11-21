@@ -1,0 +1,58 @@
+{
+  "name": "core",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.6"
+  },
+  "type": "module",
+  "imports": {
+    "#engine/*": "./engine/*",
+    "#plugins/*": "./plugins/*",
+    "#addons/*": "./addons/*",
+    "#games/*": "./games/*",
+    "#scripts/*": "./scripts/*"
+  },
+  "scripts": {
+    "dev": "node --experimental-strip-types scripts/dev.ts",
+    "serve": "node --experimental-strip-types scripts/serve.ts",
+    "test": "vitest run",
+    "test:game": "GAME=1 vitest run --project game",
+    "tsc": "tsc",
+    "bake": "node --experimental-strip-types scripts/bake.ts",
+    "health":"node --experimental-strip-types scripts/health.ts",
+    "new-game": "node --experimental-strip-types scripts/new-game.ts",
+    "workshop": "node --experimental-strip-types scripts/workshop.ts",
+    "particle-views": "node --experimental-strip-types scripts/particle-views.ts",
+    "particle-score": "node --experimental-strip-types --no-warnings scripts/particle-score.ts",
+    "particle-costs":"node --experimental-strip-types --no-warnings scripts/particle-costs.ts",
+    "produce_static_site": "node --experimental-strip-types scripts/produce_static_site.ts",
+    "preview_loading": "echo 'the loading screen at http://localhost:8000/loading.html' && python3 -m http.server 8000 --bind 127.0.0.1 --directory scripts",
+    "publish_gh_pages_game": "node --experimental-strip-types scripts/publish_gh_pages_game.ts"
+  },
+  "dependencies": {
+    "@types/three": "^0.186.0",
+    "box2d.js": "github:outsidedata/box2d.js#db5c8b0",
+    "box3d.js": "github:outsidedata/box3d.js#ed2c9ad",
+    "fflate": "^0.8.3",
+    "fzstd": "^0.1.1",
+    "pixi.js": "^8.21.0",
+    "three": "https://github.com/outsidedata/three.js/releases/download/r186-1f7e7c5/three-0.186.1.tgz",
+    "tone": "15",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/ws": "^8.5.12",
+    "@vitest/coverage-v8": "2.1.9",
+    "es-module-lexer": "^1.7.0",
+    "esbuild": "^0.21.5",
+    "gltfpack": "1.3.0",
+    "jsdom": "25",
+    "lil-gui": "^0.21.0",
+    "node-web-audio-api": "^2.2.0",
+    "typescript": "^5.6.0",
+    "vite": "^5.4.0",
+    "vitest": "^2.1.0"
+  }
+}
