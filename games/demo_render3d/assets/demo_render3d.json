@@ -1,5 +1,58 @@
 {
+  "gunner": {
+    "rifle": {
+      "muzzle": [-1.5, 1.6, 9],
+      "aim": { "at": [-1, 2.1, -7.75], "reach": [7, 1.5, 0], "periods": [9, 3.3, 1], "phases": [0, 1.1, 0] },
+      "every": 6,
+      "far": 40,
+      "hold": 0.5,
+      "marks": { "solid": ["hole"] },
+      "tracer": "#ffd27a",
+      "stand": true
+    },
+    "mortar": {
+      "muzzle": [0, 10, 2],
+      "aim": { "at": [0.5, 0, 0], "reach": [6.5, 0, 5.5], "periods": [11, 1, 7.4], "phases": [0, 0, 0.6] },
+      "every": 45,
+      "far": 40,
+      "hold": 0.5,
+      "marks": { "solid": ["scorch"] },
+      "tracer": "#ff8a3d",
+      "stand": false
+    },
+    "paint": {
+      "muzzle": [8.5, 1.8, 5.5],
+      "aim": { "at": [4.6, 0.85, -1], "reach": [0.55, 0.55, 0.55], "periods": [3.7, 2.3, 5.1] },
+      "every": 18,
+      "far": 40,
+      "hold": 0.5,
+      "marks": { "solid": ["splat-pink", "splat-teal", "splat-gold"] },
+      "tracer": "#7fe8ff",
+      "stand": true
+    }
+  },
+  "slider": { "reach": 3.5, "period": 8 },
+  "kelp": {
+    "height": 3.4,
+    "radius": 0.24,
+    "bones": 6,
+    "sway": 16,
+    "period": 3.2,
+    "colour": "#5f8a4a",
+    "every": 0.7,
+    "marks": ["splat-pink", "splat-gold", "splat-teal"]
+  },
   "stage": {
+    "marks": {
+      "floorSize": 32,
+      "floor": { "colour": "#8d8a84", "roughness": 0.85, "metalness": 0 },
+      "ambient": 0.25,
+      "sky": ["#b9c9e8", "#3a332c", 0.9],
+      "lights": [
+        { "colour": "#fff0d8", "intensity": 140, "distance": 40, "at": [-4, 9, 6] },
+        { "colour": "#d8e6ff", "intensity": 90, "distance": 40, "at": [7, 7, -2] }
+      ]
+    },
     "mirrors": {
       "room": [20, 8, 20],
       "wallColour": "#3a3d48",

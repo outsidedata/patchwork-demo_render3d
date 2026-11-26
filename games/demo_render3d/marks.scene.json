@@ -1,0 +1,78 @@
+{
+  "world": {
+    "defs": "demo_render3d",
+    "loader": {
+      "assets": {
+        "demo_render3d": { "type": "json", "url": "/games/demo_render3d/assets/demo_render3d.json", "preload": true },
+        "marks": { "type": "json", "url": "/games/demo_render3d/assets/marks.decal3d.json", "preload": true },
+        "hole": { "type": "texture", "url": "/games/demo_render3d/assets/hole.png", "anisotropy": 4 },
+        "holeNormal": { "type": "texture", "url": "/games/demo_render3d/assets/hole-normal.png", "space": "linear", "anisotropy": 4 },
+        "scorch": { "type": "texture", "url": "/games/demo_render3d/assets/scorch.png", "anisotropy": 4 },
+        "splat": { "type": "texture", "url": "/games/demo_render3d/assets/splat.png", "anisotropy": 4 }
+      }
+    },
+    "shapes3d": {
+      "kinds": {
+        "ground": { "shape": { "plane": { "size": [32, 32] } } },
+        "wall": { "shape": { "box": { "size": [16, 4, 0.5] } }, "look": { "colour": "#b9b2a5", "roughness": 0.9 } },
+        "side": { "shape": { "box": { "size": [0.5, 4, 10] } }, "look": { "colour": "#a9a296", "roughness": 0.9 } },
+        "pillar": { "shape": { "cylinder": { "radius": 0.7, "height": 4 } }, "look": { "colour": "#d4cfc6", "roughness": 0.7, "sides": 40 } },
+        "crate": { "shape": { "box": { "size": [1.6, 1.6, 1.6] } }, "look": { "colour": "#a8773f", "roughness": 0.8 } },
+        "slider": { "shape": { "box": { "size": [2.4, 1.6, 1.2] } }, "look": { "colour": "#4d6fa6", "roughness": 0.5 } }
+      }
+    },
+    "hitscan3d": { "kinds": {}, "rewind": 1, "mods": { "solids": ["shapes3d"], "behaviors": "shapes3d" } },
+    "solids": { "mods": { "models": "shapes3d" } },
+    "decal3d": { "looks": "marks", "most": 600, "mods": { "words": ["render3d"], "behaviors": ["render3d"] } }
+  },
+  "plugins": [
+    "loader",
+    "scenemanager",
+    "player",
+    "solids",
+    "decal3d",
+    "render3d",
+    "stats"
+  ],
+  "seats": 1,
+  "prefabs": {
+    "engine": { "dt": 0.016666666666666666, "width": 1280, "height": 720 },
+    "scenemanager": { "out": {} },
+    "loader": {},
+    "player": { "seat": 0 },
+    "render3d": {
+      "camera": { "fov": 55, "near": 0.1, "far": 200, "at": [3, 5.5, 13.5], "look": [0, 1.4, -3] },
+      "pixelRatio": 1,
+      "tone": "neutral",
+      "exposure": 1,
+      "shadows": "soft",
+      "background": "#14161c"
+    },
+    "stage": { "set": "marks" },
+    "ground": { "pos": [0, 0, 0], "yaw": 0 },
+    "wall": { "pos": [0, 0, 0], "yaw": 0 },
+    "side": { "pos": [0, 0, 0], "yaw": 0 },
+    "pillar": { "pos": [0, 0, 0], "yaw": 0 },
+    "crate": { "pos": [0, 0, 0], "yaw": 0 },
+    "slider": { "pos": [0, 0, 0], "yaw": 0, "was": null, "home": null, "t": 0 },
+    "kelp": { "pos": [0, 0, 0] },
+    "gunner": { "gun": "", "t": 0, "n": 0, "shots": [] }
+  },
+  "actors": [
+    { "is": "scenemanager" },
+    { "is": "loader" },
+    { "is": "stage" },
+    { "is": "ground", "pos": [0, 0, 0] },
+    { "is": "wall", "pos": [0, 0, -8] },
+    { "is": "side", "pos": [-8, 0, -3] },
+    { "is": "pillar", "pos": [-3, 0, -4] },
+    { "is": "pillar", "pos": [2.2, 0, -4.4] },
+    { "is": "crate", "pos": [4.6, 0, -1], "yaw": 0.6 },
+    { "is": "crate", "pos": [-5, 0, 0.5], "yaw": 0.25 },
+    { "is": "slider", "pos": [0, 0, -6.4] },
+    { "is": "kelp", "pos": [1.2, 0, 2.2] },
+    { "is": "gunner", "gun": "rifle" },
+    { "is": "gunner", "gun": "mortar" },
+    { "is": "gunner", "gun": "paint" }
+  ]
+}

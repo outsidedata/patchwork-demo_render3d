@@ -1,0 +1,7 @@
+{
+  "hole": { "map": "hole", "normal": "holeNormal", "size": [0.45, 0.45], "scale": [0.8, 1.2], "deep": 0.25, "angle": 80, "spin": 180, "colour": "#ffffff", "roughness": 0.8, "life": 0, "fade": 0, "lift": 0.003 },
+  "scorch": { "map": "scorch", "size": [2.6, 2.6], "scale": [0.8, 1.25], "deep": 0.6, "angle": 70, "spin": 180, "colour": "#ffffff", "roughness": 1, "opacity": 0.9, "life": 16, "fade": 5, "lift": 0.004 },
+  "splat-pink": { "map": "splat", "size": [0.9, 0.9], "scale": [0.6, 1.1], "deep": 0.6, "angle": 85, "spin": 180, "colour": "#ff3f8e", "roughness": 0.3, "life": 0, "fade": 0, "lift": 0.003 },
+  "splat-teal": { "map": "splat", "size": [0.9, 0.9], "scale": [0.6, 1.1], "deep": 0.6, "angle": 85, "spin": 180, "colour": "#1fd1c4", "roughness": 0.3, "life": 0, "fade": 0, "lift": 0.003 },
+  "splat-gold": { "map": "splat", "size": [0.9, 0.9], "scale": [0.6, 1.1], "deep": 0.6, "angle": 85, "spin": 180, "colour": "#ffc21f", "roughness": 0.3, "life": 0, "fade": 0, "lift": 0.003 }
+}
